@@ -9,7 +9,8 @@ const Book = ({book}) => {
     const history = useNavigate()
     const sendRequest = async()=>{
         await axios.delete(`http://localhost:3000/books/${_id}`)
-      .then((res)=>res.data).then(()=>history('/')).then(history("/books"));
+      .then((res)=>res.data).then(()=>history('/'))
+      history("/books");
     }
   return (
     <div className='card'>
